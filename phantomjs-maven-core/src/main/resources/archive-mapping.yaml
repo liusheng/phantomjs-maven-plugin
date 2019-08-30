@@ -48,6 +48,17 @@ mappings:
       classifier: "linux-i686"
       extension: "tar.bz2"
   - spec:
+      version: "[2.1.1]"
+      operatingSystem:
+        name: "linux"
+        architecture: "aarch64"
+    archive:
+      baseUrlTemplate: https://github.com/liusheng/phantomjs/releases/download/2.1.1/
+      fileTemplate: phantomjs-{version}-{classifier}.{extension}
+      executableTemplate: phantomjs-{version}-{classifier}/bin/phantomjs
+      classifier: "linux-aarch64"
+      extension: "tar.bz2"
+  - spec:
       version: "(,1.9.2]"
       operatingSystem:
         name: "linux"

@@ -9,7 +9,12 @@ if (platform.contains('win')) {
 } else if (platform.contains('mac')) {
     expected += 'macosx/bin/phantomjs';
 } else if (platform.contains('nux')) {
-    def arch = System.properties['os.arch'].contains('64') ? 'x86_64' : 'i686';
+    if (System.properties['os.arch'] == "aarch64") {
+      def arch = 'aarch64';
+    }
+    else {
+      def arch = System.properties['os.arch'].contains('64') ? 'x86_64' : 'i686';
+    }
     expected += 'linux-' + arch + '/bin/phantomjs';
 }
 

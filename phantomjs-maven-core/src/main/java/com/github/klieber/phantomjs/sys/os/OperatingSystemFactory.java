@@ -55,7 +55,10 @@ public class OperatingSystemFactory {
   private String getArchitecture() {
     String arch = systemProperties.getOsArch();
     String architecture = null;
-    if (arch != null) {
+    if (arch == "aarch64") {
+      architecture = "aarch64";
+    }
+    else if (arch != null) {
       architecture = arch.contains("64") ? "x86_64" : "i686";
     }
     return architecture;
